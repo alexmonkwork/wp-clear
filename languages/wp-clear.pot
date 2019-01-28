@@ -1,0 +1,107 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Wp clear\n"
+"POT-Creation-Date: 2019-01-28 20:00+0300\n"
+"PO-Revision-Date: 2019-01-28 19:34+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-clear.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-wp-clear-admin.php:105
+msgid "Settings"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:47
+msgid "Clean WordPress head section"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:50
+msgid "Clean up the head section"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:53
+msgid ""
+"Remove Unnecessary Code from wp_head.\n"
+"                <ol>\n"
+"                    <li>WordPress generator meta tag</li>\n"
+"                    <li>Post Relational Links</li>\n"
+"                    <li>Post shortlinks</li>\n"
+"                    <li>Canonical links</li>\n"
+"                    <li>Post and Comment Feed and Other feeds</li>\n"
+"                    <li>Resource hints</li>\n"
+"                </ol>"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:73
+msgid "Remove emoji"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:76
+msgid ""
+"Note: Emoticons will still work and emoji’s will still work in browsers "
+"which have built in support for them. This plugin simply removes the extra "
+"code bloat used to add support for emoji’s in older browsers."
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:86
+msgid "Disable emoji in Tinymce"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:89
+msgid "To remove the Tinymce editor emoji plugin."
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:99
+msgid "Disable wp-embed"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:102
+msgid ""
+"\n"
+"                <ol>\n"
+"                    <li>Prevents others from embedding your site.</li>\n"
+"                    <li>Prevents you from embedding other non-whitelisted "
+"sites.</li>\n"
+"                    <li>Disables all JavaScript related to the feature.</"
+"li>\n"
+"                    <li>Removes support for the WordPress embed block in the "
+"new block editor.</li>\n"
+"                </ol> "
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:114
+msgid "Save all changes"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Wp clear"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://delay-delo.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A simple plugin removes unnecessary code from wp_head. Allows you to disable "
+"emoji and wp-embed"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Alexey Rtishchev"
+msgstr ""
