@@ -181,8 +181,8 @@ class Wp_Clear {
 	private function define_public_hooks() {
 		$plugin_public = new Wp_Clear_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'get_footer', $plugin_public, 'enqueue_styles' );
+		$this->loader->add_action( 'get_footer', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_public, 'wp_clear_head_all' );
 		$this->loader->add_action( 'wp_loaded', $plugin_public, 'wp_clear_emodji_disable' );
 		$this->loader->add_action('after_setup_theme', $plugin_public,'wp_clear_emodji_disable');
