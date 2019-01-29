@@ -110,6 +110,19 @@
         </fieldset>
 
         <hr class="hr">
+        
+         <fieldset>
+            <legend class="screen-reader-text"><span>Removes REST API</span></legend>
+            <label for="<?php echo $this->plugin_name;?>-disable_wp_embed">
+                <input type="checkbox" id="<?php echo $this->plugin_name;?>-remove_rest_api" name="<?php echo $this->plugin_name;?>[remove_rest_api]" value="1" <?php checked( $remove_rest_api, 1 ); ?> />
+                <span><?php esc_attr_e( 'Removes REST API', $this->plugin_name ); ?></span>
+            </label>
+            <div class="note">
+			    <?php  _e('Removes all REST API filters and disables the API itself.' , $this->plugin_name)  ?>
+            </div>
+        </fieldset>
+
+        <hr class="hr">
 
 		<?php submit_button(__('Save all changes', $this->plugin_name), 'primary','submit', TRUE); ?>
 

@@ -134,6 +134,7 @@ class Wp_Clear_Admin {
 		$valid['emojis_disable'] = (isset($input['emojis_disable']) && !empty($input['emojis_disable'])) ? 1: 0;
 		$valid['disable_emojis_tinymce'] = (isset($input['disable_emojis_tinymce']) && !empty($input['emojis_disable'])) ? 1: 0;
 		$valid['disable_wp_embed'] = (isset($input['disable_wp_embed']) && !empty($input['disable_wp_embed'])) ? 1: 0;
+		$valid['remove_rest_api'] = (isset($input['remove_rest_api']) && !empty($input['remove_rest_api'])) ? 1: 0;
 
 		return $valid;
 	}
