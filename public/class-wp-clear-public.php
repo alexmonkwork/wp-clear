@@ -179,5 +179,26 @@ class Wp_Clear_Public {
 		}
 
 	}
+	
+	/**
+	 * Removes all REST API filters and disables the API itself.
+	 *
+	 *@since    1.0.0
+	 */
+
+	public function wp_clear_remove_rest_api() {
+
+		remove_action( 'init',          'rest_api_init' );
+		remove_action( 'rest_api_init', 'rest_api_default_filters', 10 );
+		remove_action( 'parse_request', 'rest_api_loaded' );
+		remove_action( 'rest_api_init', 'wp_oembed_register_route'              );
+		remove_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10 );
+		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+		remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+		remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+		remove_action('wp_head', 'rest_output_link_wp_head', 10);
+		remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+		remove_action('xmlrpc_rsd_apis', 'rest_output_rsd');
+	}
 
 }
