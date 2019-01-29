@@ -187,7 +187,7 @@ class Wp_Clear {
 		$this->loader->add_action( 'wp_loaded', $plugin_public, 'wp_clear_emodji_disable' );
 		$this->loader->add_action('after_setup_theme', $plugin_public,'wp_clear_emodji_disable');
 		$this->loader->add_action( 'wp_loaded', $plugin_public, 'wp_clear_disable_emojis_tinymce' );
-		$this->loader->add_action( 'wp_footer', $plugin_public,'wp_clear_deregister_embed' );
+		$this->loader->add_action( 'wp_footer', $plugin_public,'wp_clear_deregister_wp_embed' );
 
 		$this->loader->add_filter( 'wp_footer', $plugin_public,'wp_clear_deregister_wp_embed' );
 		$this->loader->add_filter('wp_headers', $plugin_public, 'wp_clear_remove_x_pingback');
