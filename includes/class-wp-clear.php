@@ -192,7 +192,6 @@ class Wp_Clear {
 
 		$this->loader->add_filter( 'wp_footer', $plugin_public,'wp_clear_deregister_wp_embed' );
 		$this->loader->add_filter('wp_headers', $plugin_public, 'wp_clear_remove_x_pingback');
-		$this->loader->add_filter( 'tiny_mce_plugins',$plugin_public, 'disable_emoji_tinymce' );
 	}
 
 	/**
