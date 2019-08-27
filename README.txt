@@ -2,13 +2,14 @@
 Contributors: Alexey Rtishchev
 Donate link: https://delay-delo.com/
 Tags: clearup, disable emoji
-Requires at least: 5.0
-Tested up to: 5.0
-Stable tag: 5.0
+Requires at least: 5.2
+Tested up to: 5.2.2
+Stable tag: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple plugin removes unnecessary code from wp_head. Allows you to disable emoji and wp-embed
+A simple plugin removes unnecessary code from wp_head. Allows you to disable emoji and wp-embed.
+Required PHP 7.*
 
 == Description ==
 

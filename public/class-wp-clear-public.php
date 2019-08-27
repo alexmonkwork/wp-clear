@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://delay-delo.com/
- * @since      1.0.0
+ * @since      2.0.0
  *
  * @package    Wp_Clear
  * @subpackage Wp_Clear/public
@@ -22,183 +22,193 @@
  */
 class Wp_Clear_Public {
 
-	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-	private $plugin_name;
+    /**
+     * The ID of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $plugin_name    The ID of this plugin.
+     */
+    private $plugin_name;
 
-	/**
-	 * The version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
-	 */
-	private $version;
+    /**
+     * The version of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $version    The current version of this plugin.
+     */
+    private $version;
 
-	/**
-	 * Initialize the class and set its properties.
-	 *
-	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
-	 */
-	public function __construct( $plugin_name, $version ) {
+    /**
+     * Initialize the class and set its properties.
+     *
+     * @since    1.0.0
+     * @param      string    $plugin_name       The name of the plugin.
+     * @param      string    $version    The version of this plugin.
+     */
+    public function __construct( $plugin_name, $version ) {
 
-		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+        $this->plugin_name = $plugin_name;
+        $this->version = $version;
 
-		$this->wp_clear_options = get_option($this->plugin_name);
+        $this->wp_clear_options = get_option($this->plugin_name);
 
-	}
+    }
 
-	/**
-	 * Register the stylesheets for the public-facing side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_styles() {
+    /**
+     * Register the stylesheets for the public-facing side of the site.
+     *
+     * @since    1.0.0
+     */
+    public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-clear-public.css', array(), $this->version, 'all' );
+        //	wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-clear-public.css', array(), $this->version, 'all' );
 
-	}
+    }
 
-	/**
-	 * Register the JavaScript for the public-facing side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
+    /**
+     * Register the JavaScript for the public-facing side of the site.
+     *
+     * @since    1.0.0
+     */
+    public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-clear-public.js', array( 'jquery' ), $this->version, true );
+        //	wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-clear-public.js', array( 'jquery' ), $this->version, true );
 
-	}
-
-	/**
-	 * Cleanup head
-	 *
-	 * @since    1.0.0
-	 */
-	public function wp_clear_head_all() {
-
-		if($this->wp_clear_options['cleanup']){
-
-			remove_action( 'wp_head', 'rsd_link' );
-			remove_action( 'wp_head', 'feed_links_extra', 3 );
-			remove_action( 'wp_head', 'feed_links', 2 );
-			remove_action( 'wp_head', 'index_rel_link' );
-			remove_action( 'wp_head', 'wlwmanifest_link' );
-			remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-			remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-			remove_action( 'wp_head', 'rel_canonical', 10, 0 );
-			remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
-			remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-			remove_action( 'wp_head', 'wp_generator' );
-			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-			remove_action('wp_head', 'adjacent_posts_rel_link');
-			remove_action('wp_head', 'wp_resource_hints', 2);
-
-		}
-	}
+    }
 
 
-	/**
-	 * Disable the emoji's
-	 *
-	 * @since    1.0.0
-	 */
-	public function wp_clear_emodji_disable() {
+    /**
+     * Cleanup head
+     *
+     * @since   2.0.0
+     */
+    public function wp_clear_head_all() {
 
-		if($this->wp_clear_options['emojis_disable']){
+        if($this->wp_clear_options['cleanup']){
 
-			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-			remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-			remove_action( 'wp_print_styles', 'print_emoji_styles' );
-			remove_action( 'admin_print_styles', 'print_emoji_styles' );
-			remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-			remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-			remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+            // Remove or set up DNS prefetch links
+            remove_action( 'wp_head', 'wp_resource_hints', 2 );
 
-			remove_action('wp_footer', 'twentyseventeen_include_svg_icons', 9999);
+            // Remove info about WordPress version from <head>
+            remove_action('wp_head', 'wp_generator');
 
+            // Remove XML-RPC link from <head>
+            add_filter('xmlrpc_enabled', function (): bool {
+                return false;
+            });
+            remove_action('wp_head', 'rsd_link');
 
-		}
-	}
+            // Remove Windows Live Writer manifest
+            remove_action('wp_head', 'wlwmanifest_link');
 
+            // Remove  shortlink
+            remove_action('wp_head', 'wp_shortlink_wp_head');
 
-	/**
-	 * Filter function used to remove the tinymce emoji plugin.
-	 *
-	 * @param $plugins
-	 *
-	 * @return array
-	 *
-	 * @since    1.0.0
-	 */
-	public function wp_clear_disable_emojis_tinymce ( $plugins ) {
+            //Remove  canonical
+            remove_action('wp_head','rel_canonical');
 
-		remove_filter( 'tiny_mce_plugins', 'disable_emoji_tinymce' );
+            // Remove PREV and NEXT links
+            remove_action('wp_head', 'adjacent_posts_rel_link');
 
-		if ( is_array( $plugins ) ) {
-			return array_diff( $plugins, array( 'wpemoji' ) );
-		} else {
-			return array();
-		}
-
-	}
+        }
+    }
 
 
-	/**
-	 * Clean up head
-	 *
-	 * @since    1.0.0
-	 */
-	public function wp_clear_remove_x_pingback($headers) {
+    /**
+     *  Remove XML feeds
+     *
+     * @since   2.0.0
+     */
+    public function  wp_clear_remove_xml() {
 
-		if(!empty($this->wp_clear_options['cleanup'])){
-			unset($headers['X-Pingback']);
-			return $headers;
-		}
+        if($this->wp_clear_options['wp_clear_remove_xml']){
 
-	}
+            // Disable RSS feeds by redirecting their URLs to homepage
+            foreach (['do_feed_rss2', 'do_feed_rss2_comments'] as $feedAction) {
+                add_action($feedAction, function (): void {
+                    // Redirect permanently to homepage
+                    wp_redirect(home_url(), 301);
+                    exit;
+                }, 1);
+            }
+
+            //Remove the feed links from <head>
+            remove_action('wp_head', 'feed_links', 2);
+            remove_action( 'wp_head', 'rsd_link' );
+            remove_action( 'wp_head', 'feed_links_extra', 3 );
+            remove_action( 'wp_head', 'index_rel_link' );
+        }
+
+    }
 
 
-	/**
-	 * Disable wp-embed
-	 *
-	 * @since    1.0.0
-	 */
-	public function wp_clear_deregister_wp_embed(){
+    /**
+     * Disable the emoji's Remove emoji script and styles from <head>
+     *
+     * @since    2.0.0
+     */
+    public function wp_clear_emodji_disable() {
 
-		if($this->wp_clear_options['disable_wp_embed']) {
-			wp_dequeue_script( 'wp-embed' );
-		}
+        if($this->wp_clear_options['emojis_disable']){
 
-	}
-	
-	/**
-	 * Removes all REST API filters and disables the API itself.
-	 *
-	 *@since    1.0.0
-	 */
+            remove_action('wp_head', 'print_emoji_detection_script', 7);
+            remove_action('wp_print_styles', 'print_emoji_styles');
 
-	public function wp_clear_remove_rest_api() {
+        }
+    }
 
-		remove_action( 'init',          'rest_api_init' );
-		remove_action( 'rest_api_init', 'rest_api_default_filters', 10 );
-		remove_action( 'parse_request', 'rest_api_loaded' );
-		remove_action( 'rest_api_init', 'wp_oembed_register_route'              );
-		remove_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10 );
-		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-		remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-		remove_action('template_redirect', 'rest_output_link_header', 11, 0);
-		remove_action('wp_head', 'rest_output_link_wp_head', 10);
-		remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
-		remove_action('xmlrpc_rsd_apis', 'rest_output_rsd');
-	}
+
+    /**
+     * Clean up head
+     *
+     * @since    1.0.0
+     */
+    public function wp_clear_remove_x_pingback($headers) {
+
+        if(!empty($this->wp_clear_options['cleanup'])){
+            unset($headers['X-Pingback']);
+            return $headers;
+        }
+    }
+
+
+    /**
+     * Disable wp-embed
+     *
+     * @since    1.0.0
+     */
+    public function wp_clear_deregister_wp_embed(){
+
+        if($this->wp_clear_options['disable_wp_embed']) {
+
+            wp_dequeue_script( 'wp-embed' );
+            remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+            remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+            remove_action('rest_api_init', 'wp_oembed_register_route');
+            remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+        }
+    }
+
+
+    /**
+     * Removes all REST API filters and disables the API itself.
+     *
+     *@since    2.0.0
+     */
+
+    public function wp_clear_remove_rest_api() {
+
+        add_filter('rest_authentication_errors', function ($access) {
+            if (!current_user_can('administrator')) {
+                return new WP_Error('rest_cannot_access', 'Only authenticated users can access the REST API.', ['status' => rest_authorization_required_code()]);
+            }
+            return $access;
+        });
+
+        remove_action('wp_head', 'rest_output_link_wp_head');
+
+    }
 
 }

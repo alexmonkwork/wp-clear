@@ -23,24 +23,25 @@
 
     <form method="post" name="cleanup_options" action="options.php">
 
-		<?php
+        <?php
 
-		//Load all options
-		$options = get_option($this->plugin_name);
+        //Load all options
+        $options = get_option($this->plugin_name);
 
-		// Cleanup
-		$cleanup = $options['cleanup'];
-		$emojis_disable = $options['emojis_disable'];
-		$disable_emojis_tinymce = $options['disable_emojis_tinymce'];
-		$disable_wp_embed = $options['disable_wp_embed'];
+        // Cleanup
+        $cleanup = $options['cleanup'];
+        $emojis_disable = $options['emojis_disable'];
+        $wp_clear_remove_xml = $options['wp_clear_remove_xml'];
+        $disable_wp_embed = $options['disable_wp_embed'];
+        $remove_rest_api = $options['remove_rest_api'];
 
 
-		?>
+        ?>
 
-		<?php
-		settings_fields( $this->plugin_name );
-		do_settings_sections( $this->plugin_name );
-		?>
+        <?php
+        settings_fields( $this->plugin_name );
+        do_settings_sections( $this->plugin_name );
+        ?>
 
         <!-- remove some meta and generators from the <head> -->
         <fieldset>
@@ -65,6 +66,20 @@
 
         <hr class="hr">
 
+        <fieldset>
+            <legend class="screen-reader-text"><span>Remove XML feeds</span></legend>
+            <label for="<?php echo $this->plugin_name;?>-wp_clear_remove_xml">
+                <input type="checkbox" id="<?php echo $this->plugin_name;?>-wp_clear_remove_xml" name="<?php echo $this->plugin_name;?>[wp_clear_remove_xml]" value="1" <?php checked( $wp_clear_remove_xml, 1 ); ?> />
+                <span><?php esc_attr_e( 'Remove XML feeds', $this->plugin_name ); ?></span>
+            </label>
+            <div class="note">
+                <?php  esc_attr_e( 'Remove rel="alternate" type="application/rss+xml" from < head >' , $this->plugin_name ) ?>
+            </div>
+        </fieldset>
+
+
+        <hr class="hr">
+
         <!-- remove  -->
         <fieldset>
             <legend class="screen-reader-text"><span>Remove emoji</span></legend>
@@ -73,22 +88,13 @@
                 <span><?php esc_attr_e( 'Remove emoji', $this->plugin_name ); ?></span>
             </label>
             <div class="note">
-              <?php  esc_attr_e('Note: Emoticons will still work and emoji’s will still work in browsers which have built in support for them. This plugin simply removes the extra code bloat used to add support for emoji’s in older browsers.' , $this->plugin_name)  ?>
+                <?php  esc_attr_e('Note: Emoticons will still work and emoji’s will still work in browsers which have built in support for them. This plugin simply removes the extra code bloat used to add support for emoji’s in older browsers.' , $this->plugin_name)  ?>
             </div>
         </fieldset>
 
         <hr class="hr">
 
-        <fieldset>
-            <legend class="screen-reader-text"><span>Disable emojis in Tinymce</span></legend>
-            <label for="<?php echo $this->plugin_name;?>-disable_emojis_tinymce">
-                <input type="checkbox" id="<?php echo $this->plugin_name;?>-disable_emojis_tinymce" name="<?php echo $this->plugin_name;?>[disable_emojis_tinymce]" value="1" <?php checked( $disable_emojis_tinymce, 1 ); ?> />
-                <span><?php esc_attr_e( 'Disable emoji in Tinymce', $this->plugin_name ); ?></span>
-            </label>
-            <div class="note">
-                <?php  esc_attr_e( 'To remove the Tinymce editor emoji plugin.' , $this->plugin_name ) ?>
-            </div>
-        </fieldset>
+
 
         <hr class="hr">
 
@@ -110,21 +116,21 @@
         </fieldset>
 
         <hr class="hr">
-        
-         <fieldset>
+
+        <fieldset>
             <legend class="screen-reader-text"><span>Removes REST API</span></legend>
             <label for="<?php echo $this->plugin_name;?>-disable_wp_embed">
                 <input type="checkbox" id="<?php echo $this->plugin_name;?>-remove_rest_api" name="<?php echo $this->plugin_name;?>[remove_rest_api]" value="1" <?php checked( $remove_rest_api, 1 ); ?> />
                 <span><?php esc_attr_e( 'Removes REST API', $this->plugin_name ); ?></span>
             </label>
             <div class="note">
-			    <?php  _e('Removes all REST API filters and disables the API itself.' , $this->plugin_name)  ?>
+                <?php  _e('Removes all REST API filters and disables the API itself.' , $this->plugin_name)  ?>
             </div>
         </fieldset>
 
         <hr class="hr">
 
-		<?php submit_button(__('Save all changes', $this->plugin_name), 'primary','submit', TRUE); ?>
+        <?php submit_button(__('Save all changes', $this->plugin_name), 'primary','submit', TRUE); ?>
 
     </form>
 
