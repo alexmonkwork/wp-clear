@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5c9e92b-e874-45e2-8053-6991d9de0dd5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/class-wp-clear-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class-wp-clear-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/partials/wp-clear-admin-display.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/partials/wp-clear-admin-display.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/class-wp-clear.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-wp-clear.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/class-wp-clear-public.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/class-wp-clear-public.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/wp-clear-ru_RU.po" beforeDir="false" afterPath="$PROJECT_DIR$/languages/wp-clear-ru_RU.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/wp-clear.pot" beforeDir="false" afterPath="$PROJECT_DIR$/languages/wp-clear.pot" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +54,7 @@
       <workItem from="1548655411524" duration="2094000" />
       <workItem from="1548657534375" duration="37000" />
       <workItem from="1548681602424" duration="8058000" />
-      <workItem from="1566903929622" duration="531000" />
+      <workItem from="1566903929622" duration="894000" />
     </task>
     <servers />
   </component>

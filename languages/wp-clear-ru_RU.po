@@ -1,15 +1,17 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "Project-Id-Version: Wp clear\n"
-"POT-Creation-Date: 2019-01-28 20:00+0300\n"
-"PO-Revision-Date: 2019-01-28 20:15+0300\n"
+"POT-Creation-Date: 2019-08-27 13:11+0300\n"
+"PO-Revision-Date: 2019-08-27 13:13+0300\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: wp-clear.php\n"
@@ -17,24 +19,22 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: ru_RU\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: admin/class-wp-clear-admin.php:105
+#: admin/class-wp-clear-admin.php:107
 msgid "Settings"
 msgstr "Настройки"
 
-#: admin/partials/wp-clear-admin-display.php:47
+#: admin/partials/wp-clear-admin-display.php:48
 msgid "Clean WordPress head section"
 msgstr "Очистить раздел WordPress"
 
-#: admin/partials/wp-clear-admin-display.php:50
+#: admin/partials/wp-clear-admin-display.php:51
 msgid "Clean up the head section"
 msgstr "Очистить секцию <head>"
 
-#: admin/partials/wp-clear-admin-display.php:53
+#: admin/partials/wp-clear-admin-display.php:54
 msgid ""
 "Remove Unnecessary Code from wp_head.\n"
 "                <ol>\n"
@@ -57,10 +57,18 @@ msgstr ""
 "                </ol>"
 
 #: admin/partials/wp-clear-admin-display.php:73
+msgid "Remove XML feeds"
+msgstr "Удалить  XML feeds"
+
+#: admin/partials/wp-clear-admin-display.php:76
+msgid "Remove rel=\"alternate\" type=\"application/rss+xml\" from < head >"
+msgstr "Удаляет ссылки типа  rel=\"alternate\" type=\"application/rss+xml\""
+
+#: admin/partials/wp-clear-admin-display.php:88
 msgid "Remove emoji"
 msgstr "Удалить  Emoji"
 
-#: admin/partials/wp-clear-admin-display.php:76
+#: admin/partials/wp-clear-admin-display.php:91
 msgid ""
 "Note: Emoticons will still work and emoji’s will still work in browsers "
 "which have built in support for them. This plugin simply removes the extra "
@@ -70,19 +78,11 @@ msgstr ""
 "поддерживают. Этот плагин просто удаляет лишний код, используемый для "
 "добавления поддержки Emoji в старых браузерах."
 
-#: admin/partials/wp-clear-admin-display.php:86
-msgid "Disable emoji in Tinymce"
-msgstr "Отключить плагин emoji в текстовом редакторе Tinymce"
-
-#: admin/partials/wp-clear-admin-display.php:89
-msgid "To remove the Tinymce editor emoji plugin."
-msgstr "Удаляет плагин emoji из текстового редактора Tinymce."
-
-#: admin/partials/wp-clear-admin-display.php:99
+#: admin/partials/wp-clear-admin-display.php:105
 msgid "Disable wp-embed"
 msgstr "Отключить wp-embed"
 
-#: admin/partials/wp-clear-admin-display.php:102
+#: admin/partials/wp-clear-admin-display.php:108
 msgid ""
 "\n"
 "                <ol>\n"
@@ -105,7 +105,15 @@ msgstr ""
 "редакторе блоков.</li>\n"
 "                </ol> "
 
-#: admin/partials/wp-clear-admin-display.php:114
+#: admin/partials/wp-clear-admin-display.php:124
+msgid "Removes REST API"
+msgstr "Отключить   REST API"
+
+#: admin/partials/wp-clear-admin-display.php:127
+msgid "Removes all REST API filters and disables the API itself."
+msgstr "Удаляет все фильтры API REST и отключает сам API."
+
+#: admin/partials/wp-clear-admin-display.php:133
 msgid "Save all changes"
 msgstr "Сохранить все изменения"
 
@@ -121,11 +129,24 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "A simple plugin removes unnecessary code from wp_head. Allows you to disable "
-"emoji and wp-embed"
+"emoji and wp-embed. Required PHP 7.*"
 msgstr ""
-"Простой плагин удаляет ненужный код из wp_head. Позволяет отключить эмодзи и "
-"wp-embed"
+"Простой плагин удаляет ненужный код из wp_head. Позволяет отключить emoji  и "
+"wp-embed. Требуется PHP 7. *"
 
 #. Author of the plugin/theme
 msgid "Alexey Rtishchev"
-msgstr ""
+msgstr "Алексей Ртищев"
+
+#~ msgid "Disable emoji in Tinymce"
+#~ msgstr "Отключить плагин emoji в текстовом редакторе Tinymce"
+
+#~ msgid "To remove the Tinymce editor emoji plugin."
+#~ msgstr "Удаляет плагин emoji из текстового редактора Tinymce."
+
+#~ msgid ""
+#~ "A simple plugin removes unnecessary code from wp_head. Allows you to "
+#~ "disable emoji and wp-embed"
+#~ msgstr ""
+#~ "Простой плагин удаляет ненужный код из wp_head. Позволяет отключить "
+#~ "эмодзи и wp-embed"

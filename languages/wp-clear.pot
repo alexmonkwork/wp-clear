@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wp clear\n"
-"POT-Creation-Date: 2019-01-28 20:00+0300\n"
+"POT-Creation-Date: 2019-08-27 13:06+0300\n"
 "PO-Revision-Date: 2019-01-28 19:34+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: wp-clear.php\n"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: admin/class-wp-clear-admin.php:105
+#: admin/class-wp-clear-admin.php:107
 msgid "Settings"
 msgstr ""
 
-#: admin/partials/wp-clear-admin-display.php:47
+#: admin/partials/wp-clear-admin-display.php:48
 msgid "Clean WordPress head section"
 msgstr ""
 
-#: admin/partials/wp-clear-admin-display.php:50
+#: admin/partials/wp-clear-admin-display.php:51
 msgid "Clean up the head section"
 msgstr ""
 
-#: admin/partials/wp-clear-admin-display.php:53
+#: admin/partials/wp-clear-admin-display.php:54
 msgid ""
 "Remove Unnecessary Code from wp_head.\n"
 "                <ol>\n"
@@ -47,29 +47,29 @@ msgid ""
 msgstr ""
 
 #: admin/partials/wp-clear-admin-display.php:73
-msgid "Remove emoji"
+msgid "wp_clear_remove_xml"
 msgstr ""
 
 #: admin/partials/wp-clear-admin-display.php:76
+msgid "Remove XML feeds"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:88
+msgid "Remove emoji"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:91
 msgid ""
 "Note: Emoticons will still work and emoji’s will still work in browsers "
 "which have built in support for them. This plugin simply removes the extra "
 "code bloat used to add support for emoji’s in older browsers."
 msgstr ""
 
-#: admin/partials/wp-clear-admin-display.php:86
-msgid "Disable emoji in Tinymce"
-msgstr ""
-
-#: admin/partials/wp-clear-admin-display.php:89
-msgid "To remove the Tinymce editor emoji plugin."
-msgstr ""
-
-#: admin/partials/wp-clear-admin-display.php:99
+#: admin/partials/wp-clear-admin-display.php:105
 msgid "Disable wp-embed"
 msgstr ""
 
-#: admin/partials/wp-clear-admin-display.php:102
+#: admin/partials/wp-clear-admin-display.php:108
 msgid ""
 "\n"
 "                <ol>\n"
@@ -83,7 +83,15 @@ msgid ""
 "                </ol> "
 msgstr ""
 
-#: admin/partials/wp-clear-admin-display.php:114
+#: admin/partials/wp-clear-admin-display.php:124
+msgid "Removes REST API"
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:127
+msgid "Removes all REST API filters and disables the API itself."
+msgstr ""
+
+#: admin/partials/wp-clear-admin-display.php:133
 msgid "Save all changes"
 msgstr ""
 
@@ -99,7 +107,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "A simple plugin removes unnecessary code from wp_head. Allows you to disable "
-"emoji and wp-embed"
+"emoji and wp-embed. Required PHP 7.*"
 msgstr ""
 
 #. Author of the plugin/theme
