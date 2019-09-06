@@ -123,10 +123,10 @@ class Wp_Clear_Public {
      */
     public function  wp_clear_remove_xml() {
 
-        if($this->wp_clear_options['wp_clear_remove_xml']){
+          if($this->wp_clear_options['remove_xml']){
 
             // Disable RSS feeds by redirecting their URLs to homepage
-            foreach (['do_feed_rss2', 'do_feed_rss2_comments'] as $feedAction) {
+           foreach (['do_feed_rss2', 'do_feed_rss2_comments'] as $feedAction) {
                 add_action($feedAction, function (): void {
                     // Redirect permanently to homepage
                     wp_redirect(home_url(), 301);
@@ -139,7 +139,7 @@ class Wp_Clear_Public {
             remove_action( 'wp_head', 'rsd_link' );
             remove_action( 'wp_head', 'feed_links_extra', 3 );
             remove_action( 'wp_head', 'index_rel_link' );
-        }
+     }
 
     }
 

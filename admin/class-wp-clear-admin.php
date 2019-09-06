@@ -135,7 +135,7 @@ class Wp_Clear_Admin {
         $valid = array();
 
         $valid['cleanup'] = (isset($input['cleanup']) && !empty($input['cleanup'])) ? 1 : 0;
-        $valid['wp_clear_remove_xml'] = (isset($input['wp_clear_remove_xml']) && !empty($input['wp_clear_remove_xml'])) ? 1: 0;
+        $valid['remove_xml'] = (isset($input['remove_xml']) && !empty($input['remove_xml'])) ? 1: 0;
         $valid['emojis_disable'] = (isset($input['emojis_disable']) && !empty($input['emojis_disable'])) ? 1: 0;
         $valid['disable_wp_embed'] = (isset($input['disable_wp_embed']) && !empty($input['disable_wp_embed'])) ? 1: 0;
         $valid['remove_rest_api'] = (isset($input['remove_rest_api']) && !empty($input['remove_rest_api'])) ? 1: 0;

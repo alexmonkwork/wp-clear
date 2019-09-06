@@ -31,7 +31,7 @@
         // Cleanup
         $cleanup = $options['cleanup'];
         $emojis_disable = $options['emojis_disable'];
-        $wp_clear_remove_xml = $options['wp_clear_remove_xml'];
+        $remove_xml = $options['remove_xml'];
         $disable_wp_embed = $options['disable_wp_embed'];
         $remove_rest_api = $options['remove_rest_api'];
 
@@ -68,8 +68,8 @@
 
         <fieldset>
             <legend class="screen-reader-text"><span>Remove XML feeds</span></legend>
-            <label for="<?php echo $this->plugin_name;?>-wp_clear_remove_xml">
-                <input type="checkbox" id="<?php echo $this->plugin_name;?>-wp_clear_remove_xml" name="<?php echo $this->plugin_name;?>[wp_clear_remove_xml]" value="1" <?php checked( $wp_clear_remove_xml, 1 ); ?> />
+            <label for="<?php echo $this->plugin_name;?>-remove_xml">
+                <input type="checkbox" id="<?php echo $this->plugin_name;?>-remove_xml" name="<?php echo $this->plugin_name;?>[remove_xml]" value="1" <?php checked( $remove_xml, 1 ); ?> />
                 <span><?php esc_attr_e( 'Remove XML feeds', $this->plugin_name ); ?></span>
             </label>
             <div class="note">
